@@ -27,8 +27,8 @@ export function viewportProgress(top, height, viewportHeight) {
 export function revealOnScroll() {
   if (!('IntersectionObserver' in window)) return
   const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-  const elements = document.querySelectorAll('.hero-stats .stat, .bestsellers-heading, .bestseller-card, .editorial-grid > div:first-child, .editorial-mosaic figure, .section-heading, .product-card, .guarantee, .pdp-info-card, .pdp-specs-card, .pdp-review, .pdp-related-heading')
-  const layers = document.querySelectorAll('.hero, .editorial-mosaic, .pdp-gallery')
+  const elements = document.querySelectorAll('.chapter-copy, .chapter-marker, .experience-gear-heading, .field-gear, .journey-finale h2, .bestsellers-heading, .bestseller-card, .section-heading, .product-card, .guarantee, .pdp-info-card, .pdp-specs-card, .pdp-review, .pdp-related-heading')
+  const layers = document.querySelectorAll('.journey-chapter, .experience-gear, .pdp-gallery')
   const activeLayers = new Set()
   let frame = 0
 
@@ -41,7 +41,6 @@ export function revealOnScroll() {
     document.documentElement.style.setProperty('--page-progress', distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0)
     for (const { element, box } of measurements) {
       element.style.setProperty('--scroll-depth', (viewportProgress(box.top, box.height, height) * 2 - 1).toFixed(4))
-      if (element.classList.contains('hero')) element.style.setProperty('--hero-progress', Math.max(0, Math.min(1, -box.top / box.height)).toFixed(4))
     }
   }
 
@@ -85,7 +84,7 @@ export function revealOnScroll() {
   }
 
   function onFocus(event) {
-    event.target.closest('.scroll-reveal')?.classList.add('is-revealed')
+    if (event.target.matches(':focus-visible')) event.target.closest('.scroll-reveal')?.classList.add('is-revealed')
   }
 
   window.addEventListener('scroll', schedule, { passive: true })

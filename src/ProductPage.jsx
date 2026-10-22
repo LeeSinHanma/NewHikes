@@ -53,6 +53,7 @@ export default function ProductPage({ product, isFavorite, onFavorite, onAdd }) 
   return (
     <main className="product-page">
       <section className="pdp-main container" aria-labelledby="product-title">
+        <a className="pdp-back-shop" href="#shop">← Back to shop</a>
         <div className="pdp-main-grid">
           <div className="pdp-gallery">
             <div className="pdp-photo" onPointerMove={tiltWithPointer} onPointerLeave={resetTilt}><img key={image} src={image} alt={product.name} /><span className="pdp-photo-caption">Photo study <span>0{views.indexOf(image) + 1} / 0{views.length}</span></span><button className="pdp-favorite" aria-label={isFavorite ? 'Remove from saved gear' : 'Save to wishlist'} aria-pressed={isFavorite} onClick={() => onFavorite(product)}><img src="/design/7dc18.svg" alt="" /></button></div>
