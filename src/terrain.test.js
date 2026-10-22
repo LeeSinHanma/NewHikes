@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { createTerrain, terrainHeight, trailPoint, trailStops } from './terrain.js'
+import { createTerrain, terrainHeight, trailPoint, trailStops, landscapeHeight, forestPositions } from './terrain.js'
 import { pointerTilt, viewportProgress } from './immersion.js'
 
 test('terrain is deterministic, bounded, and has a pronounced alpine summit', () => {
@@ -30,14 +30,33 @@ test('terrain mesh has valid triangles and normalized upward surface normals', (
 })
 
 test('trail and its interactive checkpoints stay above the terrain', () => {
-  for (let i = 0; i <= 100; i++) {
-    const [x, y, z] = trailPoint(i / 100)
-    assert.ok(Math.abs(y - terrainHeight(x, z) - 0.18) < 0.00001)
+  for (const branch of [0, 1, 2]) {
+    for (let i = 0; i <= 100; i++) {
+      const [x, y, z] = trailPoint(i / 100, branch)
+      assert.ok(Math.abs(y - landscapeHeight(x, z) - 0.3) < 0.00001)
+    }
   }
   assert.deepEqual(trailPoint(-1), trailPoint(0))
   assert.deepEqual(trailPoint(2), trailPoint(1))
   assert.equal(trailStops.length, 3)
   assert.deepEqual(trailStops.map(stop => stop.progress), [0, 0.55, 1])
+})
+
+test('the three mountain ranges and instanced forest use deterministic ground positions', () => {
+  for (const [x, z] of [[1.2, -31.2], [-30, -43], [40.6, -50.6]]) assert.ok(landscapeHeight(x, z) > 15)
+  const trees = forestPositions()
+  assert.equal(trees.length, 180)
+  assert.deepEqual(forestPositions(), trees)
+  for (const tree of trees) {
+    assert.equal(tree.y, landscapeHeight(tree.x, tree.z))
+    assert.ok(tree.y <= 7 && tree.size >= 1.8 && tree.size <= 4.6)
+    for (const branch of [0, 1, 2]) {
+      for (let i = 0; i < 100; i++) {
+        const [x, , z] = trailPoint(i / 99, branch)
+        assert.ok(Math.hypot(x - tree.x, z - tree.z) >= 2.5)
+      }
+    }
+  }
 })
 
 test('pointer depth stays within its allowed tilt and handles empty bounds', () => {

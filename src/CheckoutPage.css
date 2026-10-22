@@ -1,0 +1,131 @@
+.checkout-page { padding-top: 125px; padding-bottom: 40px; min-height: 100svh; background: #f6f5ec; }
+.checkout-back { display: block; width: fit-content; color: #687e63; font: 500 11px/18px var(--heading-font); margin-bottom: 30px; }
+.checkout-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 40px; }
+.checkout-eyebrow { color: #a06035; font: 600 9px/18px var(--heading-font); letter-spacing: 1.8px; text-transform: uppercase; }
+.checkout-heading h1 { font-size: clamp(42px, 4.3vw, 62px); line-height: 1.02; letter-spacing: -2px; font-weight: 500; margin-top: 16px; outline: none; }
+.checkout-heading h1 em { color: #8d6f49; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+.checkout-heading > p { max-width: 330px; color: #667963; font-size: 14px; line-height: 23px; padding-bottom: 4px; }
+.checkout-heading > p > span { display: block; margin-top: 12px; font-size: 11px; line-height: 19px; color: #85907a; }
+.checkout-layout { display: grid; grid-template-columns: 1.08fr 1fr; gap: 40px; align-items: start; }
+.receipt-card { position: relative; min-width: 0; padding: 32px; background: #fffef7; border: 1px solid #e4e5d7; box-shadow: 0 12px 35px -20px #394d2733; border-radius: 10px 10px 0 0; }
+.receipt-card::after { content: ''; position: absolute; bottom: -10px; left: -1px; right: -1px; height: 12px; background: linear-gradient(135deg, #fffef7 6px, transparent 0) 0 0/12px 12px repeat-x, linear-gradient(225deg, #fffef7 6px, transparent 0) 0 0/12px 12px repeat-x; pointer-events: none; }
+.receipt-card-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid #e0e4d5; }
+.receipt-card-top > img { width: 112px; height: auto; }
+.receipt-stamp { padding: 6px 10px; border: 1px solid #b6c0a8; border-radius: 4px; color: #667957; font: 500 9px/16px var(--heading-font); letter-spacing: 1.2px; text-transform: uppercase; rotate: -3deg; white-space: nowrap; }
+.receipt-heading { padding-top: 26px; }
+.receipt-heading h2 { color: #284732; font-size: 20px; line-height: 27px; font-weight: 500; letter-spacing: -.5px; }
+.receipt-heading > p { color: #9b774f; font: 500 10px/18px var(--heading-font); margin-top: 8px; letter-spacing: .7px; }
+.receipt-heading time { display: block; color: #87917e; font: 400 10px/18px var(--heading-font); margin-top: 3px; }
+.receipt-items { list-style: none; margin: 20px 0 0; padding: 0; }
+.receipt-item { display: grid; grid-template-columns: 66px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding-block: 20px; border-bottom: 1px solid #e8ebde; }
+.receipt-item-photo { display: flex; align-items: center; justify-content: center; height: 74px; background: #f2f3e9; border-radius: 5px; overflow: hidden; }
+.receipt-item-photo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; padding: 5px; }
+.receipt-item-copy h3 { color: #294533; font-size: 14px; line-height: 20px; font-weight: 600; }
+.receipt-item-copy > p { color: #859078; font-size: 10px; line-height: 17px; margin-top: 3px; }
+.receipt-item-copy > span { display: block; color: #8b795f; font: 400 10px/18px var(--heading-font); margin-top: 6px; }
+.receipt-line-total { color: #2b4934; font: 600 13px/20px var(--heading-font); white-space: nowrap; }
+.receipt-totals { margin: 24px 0 0; }
+.receipt-totals > div { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 7px; color: #7b886f; font: 400 12px/20px var(--heading-font); }
+.receipt-totals dd { margin: 0; color: #45603f; white-space: nowrap; }
+.receipt-totals .receipt-grand-total { margin-top: 18px; padding-top: 24px; border-top: 1px dashed #bec9ad; color: #233f2d; font-size: 21px; line-height: 28px; font-weight: 600; flex-wrap: wrap; }
+.receipt-grand-total dt > span { margin-left: 6px; color: #8f9a80; font-size: 10px; font-weight: 400; letter-spacing: .7px; }
+.receipt-totals .receipt-grand-total dd { color: #233f2d; font-size: 26px; letter-spacing: -.7px; margin-left: auto; }
+.receipt-footnote { padding-top: 24px; color: #8d947e; font-size: 10px; line-height: 18px; }
+.checkout-dispatch { position: sticky; top: 24px; min-width: 0; }
+.delivery-card { position: relative; overflow: hidden; border: 1px solid #3c5940; border-radius: 12px; color: #e6e8d7; background: #193a2b; }
+.delivery-card-heading { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 24px 0; }
+.delivery-card-heading .checkout-eyebrow { color: #c3aa7c; font-size: 8px; letter-spacing: 1px; }
+.delivery-scene { position: relative; height: 300px; overflow: hidden; }
+.delivery-mountains { position: absolute; bottom: 60px; width: 100%; height: 210px; opacity: .8; }
+.delivery-road { position: absolute; bottom: 60px; left: 0; right: 0; height: 1px; background: #a6b29055; box-shadow: 0 9px 0 #091e171c; }
+.delivery-road > span { position: absolute; top: 18px; width: 200%; height: 2px; opacity: .25; background: repeating-linear-gradient(90deg, #bcc697 0 28px, transparent 28px 65px); }
+.delivery-truck { position: absolute; width: 260px; bottom: 59px; left: calc(50% - 130px); z-index: 2; }
+.truck-body { display: block; width: 100%; height: auto; overflow: visible; }
+.truck-cargo-target { position: absolute; left: 12%; top: 20%; width: 45%; height: 45%; }
+.delivery-parcel { position: absolute; z-index: 3; width: 44px; height: 44px; padding: 5px; object-fit: contain; border-radius: 7px; background: #fbf8e9; box-shadow: 0 5px 15px #071e1744; opacity: 0; }
+.delivery-scene[data-phase='ready'] .delivery-parcel { opacity: .85; rotate: -6deg; }
+.delivery-scene[data-phase='departing'] .truck-body { animation: truck-bump .18s ease-in-out infinite alternate; }
+.delivery-scene[data-phase='departing'] .truck-wheel { transform-box: fill-box; transform-origin: center; animation: truck-wheel .45s linear infinite; }
+.delivery-scene[data-phase='departing'] .delivery-road > span { animation: delivery-road .45s linear infinite; }
+.delivery-scene[data-phase='dispatched'] .delivery-truck, .delivery-scene[data-phase='dispatched'] .delivery-parcel { visibility: hidden; }
+.delivery-arrived-mark { position: absolute; left: calc(50% - 40px); top: 90px; display: grid; place-items: center; width: 80px; height: 80px; color: #e4c99e; border: 1px solid #a7b68c55; border-radius: 50%; font: 400 50px/1 var(--heading-font); opacity: 0; transform: translateY(10px) scale(.8); transition: opacity .7s, transform .7s; }
+.delivery-scene[data-phase='dispatched'] .delivery-arrived-mark { opacity: 1; transform: none; }
+.delivery-status { display: flex; gap: 16px; padding: 0 24px; }
+.delivery-status-number { color: #d5b88d; font: 400 30px/34px var(--heading-font); letter-spacing: -1px; }
+.delivery-status h2 { color: #ebeadb; font-size: 21px; line-height: 28px; font-weight: 500; letter-spacing: -.5px; }
+.delivery-status p { color: #a5b79a; font-size: 11px; line-height: 20px; margin-top: 6px; }
+.delivery-steps { display: flex; align-items: center; gap: 12px; padding: 24px; color: #7f9b7f; font: 500 8px/16px var(--heading-font); text-transform: uppercase; letter-spacing: .5px; }
+.delivery-steps i { flex: 1; height: 1px; background: #82987144; }
+.delivery-steps .is-current { color: #e5c59a; }
+.delivery-steps .is-done { color: #ccd9ba; }
+.skip-delivery { display: block; margin: -6px 24px 20px auto; color: #c9cba8; background: none; border: 0; border-bottom: 1px solid #a2b08d55; font: 400 10px/18px var(--heading-font); padding: 0 0 3px; }
+.checkout-action { padding: 24px 4px 0; }
+.checkout-action > p { color: #556b4e; font: 500 13px/20px var(--heading-font); }
+.checkout-primary { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 19px 22px; min-height: 58px; border: 1px solid #244633; border-radius: 6px; background: #244633; color: #f0eddd; font: 600 11px/20px var(--heading-font); text-transform: uppercase; letter-spacing: .6px; transition: background .25s, box-shadow .25s; }
+.checkout-primary:hover { color: #fffbed; background: #31543b; box-shadow: 0 10px 24px -14px #18352399; }
+.checkout-action > .checkout-primary { width: 100%; margin-top: 12px; }
+.checkout-action > .checkout-primary > span { color: #e4c495; white-space: nowrap; }
+.checkout-action > span { display: block; color: #929b83; text-align: center; font-size: 10px; line-height: 18px; margin-top: 12px; }
+.receipt-confirmation > p > span { display: inline-grid; place-items: center; margin-right: 6px; width: 22px; height: 22px; background: #dfe8d2; border-radius: 50%; color: #3b633d; }
+.checkout-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 1px solid #dfe4d2; color: #829174; font: 400 10px/18px var(--heading-font); }
+.checkout-empty { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 24px; padding-top: 160px; padding-bottom: 100px; }
+.checkout-empty h1 { max-width: 680px; font-size: clamp(36px, 4.3vw, 60px); line-height: 1.08; font-weight: 500; letter-spacing: -1.5px; }
+.checkout-empty > p:not(.checkout-eyebrow) { color: #7b8b70; line-height: 26px; }
+.pack-checkout { width: 100%; margin-bottom: 12px; }
+@keyframes truck-bump { to { translate: 0 -1.5px; } }
+@keyframes truck-wheel { to { rotate: 360deg; } }
+@keyframes delivery-road { to { translate: -65px 0; } }
+@media (max-width: 1100px) {
+  .checkout-layout { gap: 24px; }
+  .receipt-card { padding: 24px; }
+  .receipt-item { grid-template-columns: 54px minmax(0, 1fr) auto; gap: 10px; }
+  .receipt-item-photo { height: 64px; }
+  .receipt-item-copy h3 { font-size: 13px; line-height: 19px; }
+  .receipt-line-total { font-size: 12px; }
+  .delivery-status h2 { font-size: 19px; }
+}
+@media (max-width: 800px) {
+  .checkout-page { padding-top: 110px; }
+  .checkout-heading { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 30px; }
+  .checkout-heading > p { max-width: 100%; }
+  .checkout-heading > p > span { margin-top: 5px; }
+  .checkout-layout { grid-template-columns: 1fr; gap: 40px; }
+  .checkout-dispatch { position: static; }
+  .checkout-page.is-confirmed .checkout-dispatch { grid-row: 1; }
+  .checkout-page.is-confirmed .receipt-card { grid-row: 2; }
+  .delivery-scene { height: 270px; }
+  .delivery-status h2 { font-size: 23px; }
+  .receipt-item { grid-template-columns: 66px minmax(0, 1fr) auto; gap: 16px; }
+  .receipt-line-total { font-size: 14px; }
+}
+@media (max-width: 520px) {
+  .checkout-back { margin-bottom: 24px; font-size: 10px; }
+  .checkout-heading h1 { font-size: 42px; letter-spacing: -1.7px; }
+  .checkout-heading > p { font-size: 12px; line-height: 20px; }
+  .checkout-heading > p > span { font-size: 10px; }
+  .checkout-eyebrow { font-size: 8px; letter-spacing: 1.2px; }
+  .receipt-card { padding: 20px; }
+  .receipt-card-top { gap: 12px; padding-bottom: 24px; }
+  .receipt-card-top > img { width: 98px; }
+  .receipt-stamp { font-size: 8px; padding-inline: 7px; }
+  .receipt-heading h2 { font-size: 18px; line-height: 25px; }
+  .receipt-item { grid-template-columns: 48px minmax(0, 1fr); gap: 4px 12px; padding-block: 16px; }
+  .receipt-item-photo { height: 58px; grid-row: span 2; }
+  .receipt-item-copy h3 { font-size: 13px; line-height: 18px; }
+  .receipt-line-total { grid-column: 2; font-size: 13px; padding-top: 4px; }
+  .receipt-totals .receipt-grand-total { font-size: 18px; gap: 12px; }
+  .receipt-totals .receipt-grand-total dd { font-size: 23px; }
+  .delivery-card-heading { padding: 20px 18px 0; }
+  .delivery-card-heading .checkout-eyebrow { font-size: 7px; letter-spacing: .6px; }
+  .delivery-scene { height: 245px; }
+  .delivery-truck { width: 230px; left: calc(50% - 115px); }
+  .delivery-parcel { width: 38px; height: 38px; padding: 4px; }
+  .delivery-status { padding-inline: 18px; gap: 12px; }
+  .delivery-status h2 { font-size: 20px; line-height: 26px; }
+  .delivery-status p { font-size: 10px; line-height: 18px; }
+  .delivery-steps { padding: 22px 18px; font-size: 7px; gap: 9px; }
+  .delivery-arrived-mark { top: 64px; }
+  .skip-delivery { margin-right: 18px; }
+  .checkout-primary { gap: 12px; padding: 16px; font-size: 10px; letter-spacing: .2px; }
+  .checkout-footer { margin-top: 60px; font-size: 9px; flex-wrap: wrap; gap: 8px; }
+}

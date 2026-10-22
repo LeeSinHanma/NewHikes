@@ -63,8 +63,8 @@
 body::before { content: ''; position: fixed; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, #b96a31, #f0c590); transform: scaleX(var(--page-progress, 0)); transform-origin: left; z-index: 20; pointer-events: none; }
 .product-grid, .editorial-mosaic, .hero-stats, .guarantees-grid, .pdp-info-grid, .pdp-review-grid { perspective: 1400px; }
 .scroll-reveal { opacity: 0; translate: 0 56px; rotate: 1 0 0 9deg; scale: .96; transform-origin: center top; transition: opacity .7s ease var(--reveal-delay, 0ms), translate .9s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms), rotate 1s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms), scale 1s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms), transform .25s ease-out, box-shadow .3s ease; }
-.scroll-reveal.is-revealed, .scroll-reveal:focus-within { opacity: 1; translate: 0 0; rotate: 1 0 0 0deg; scale: 1; }
-.scroll-reveal:focus-within { transition: none; }
+.scroll-reveal.is-revealed, .scroll-reveal:has(:focus-visible) { opacity: 1; translate: 0 0; rotate: 1 0 0 0deg; scale: 1; }
+.scroll-reveal:has(:focus-visible) { transition: none; }
 .hero-copy { translate: 0 calc(var(--hero-progress, 0) * -85px); opacity: calc(1 - var(--hero-progress, 0) * .45); }
 .hero::before { translate: 0 calc(var(--hero-progress, 0) * 100px); }
 .alpine-scene { translate: 0 calc(var(--hero-progress, 0) * 45px); }

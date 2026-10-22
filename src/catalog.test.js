@@ -72,8 +72,8 @@ test('pack merges matching variants and preserves distinct sizes and colors', ()
 })
 
 test('every static design asset and font referenced by the page exists locally', () => {
-  const app = ['App.jsx', 'ProductPage.jsx', 'AlpineScene.jsx'].map(file => readFileSync(new URL(file, import.meta.url), 'utf8')).join('\n')
-  const css = ['App.css', 'index.css', 'ProductPage.css', 'Immersion.css', 'Showcase.css'].map(file => readFileSync(new URL(file, import.meta.url), 'utf8')).join('\n')
+  const app = ['App.jsx', 'ProductPage.jsx', 'JourneyScene.jsx', 'LandingPage.jsx', 'CheckoutPage.jsx'].map(file => readFileSync(new URL(file, import.meta.url), 'utf8')).join('\n')
+  const css = ['App.css', 'index.css', 'ProductPage.css', 'Immersion.css', 'Showcase.css', 'LandingPage.css', 'CheckoutPage.css'].map(file => readFileSync(new URL(file, import.meta.url), 'utf8')).join('\n')
   const files = [...`${app}\n${css}`.matchAll(/\/(?:design|fonts)\/[a-z0-9.-]+/g)].map(match => match[0])
   for (const [icon] of [...app.matchAll(/\['([a-z0-9]+\.svg)'/g)].map(match => [match[1]])) files.push(`/design/${icon}`)
   for (const file of new Set(files)) assert.ok(statSync(`${process.cwd()}/public${file}`).size > 0)
